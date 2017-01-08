@@ -1,3 +1,5 @@
+// TODO: Class Game
+
 // REQUEST ANIMATION SUPPORT
 (function() {
     var lastTime = 0;
