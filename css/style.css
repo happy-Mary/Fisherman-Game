@@ -214,4 +214,14 @@ td  {
 	border: 1px solid black;
 }
 
-.container_main h2 {font-size: 250%;}
+.container_main h2 {font-size: 250%; color: green;}
+.container_main h3 {font-size: 200%; color: green;}
+.container_main p {
+	font-size: 1.5em;
+	color: green;
+	margin:  3% 10%;
+	text-align: justify;
+}
+.control img {
+	width: 5%;
+}
