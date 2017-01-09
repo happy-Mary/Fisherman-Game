@@ -310,11 +310,11 @@ var FishF;
 var ReadyFishes = [];
 var CatchedFishes = [];
 // ТАЙМЕР(В МОДЕЛИ????)
-var Timer;
+var GameRAF;
+var SecondTimer;
 
 
 // СОЗДАНИЕ ОБЪЕКТОВ
-
 // объявляем фабрику рыб и создаем рыб
 var FishF = new FishesFactory();
 FishF.CreateFishes(15);
@@ -348,6 +348,21 @@ function StartGame() {
 	pauseButton.onclick = pauseGame;
 	playButton.onclick = playGame;
 	Game();
+	SecondTimer = setInterval(Tick, 1000);
+}
+
+function Tick() {
+	var TimeElem = document.getElementsByClassName("time")[0];
+	var Tseconds = TimeElem.innerHTML;
+	Tseconds--;
+	TimeElem.innerHTML = Tseconds;
+	if (Tseconds===0) {
+		clearInterval(SecondTimer);
+		cancelAnimationFrame(GameRAF);
+		console.log("GOT THE AIM!!!");
+		// HERE View.finishLevel(); 
+		// Message
+	}
 }
 
 function MovePl(e) {
@@ -379,7 +394,7 @@ function StopPl(e) {
 }
 
 function Game() { 
-	Timer = requestAnimationFrame(Game);
+	GameRAF = requestAnimationFrame(Game);
 
 	 ManH.Update();
 	 LurH.Update();
@@ -416,7 +431,7 @@ function Collision() {
 			ManH.catched = true;
 			ReadyFishes[i].Catched();
 			LurH.got = true;
-			LurH.height = FishBot-ReadyFishes[i].SvgSize.height/2 - LurH.lurSize.top;
+			LurH.height = FishBot-ReadyFishes[i].SvgSize.height - LurH.lurSize.top;
 
 		}
 	}
@@ -438,7 +453,7 @@ function KillFish(killedFish) {
 var pauseButton = document.getElementsByClassName("pause")[0];
 console.log(pauseButton);
 var pauseGame = function() {
-	cancelAnimationFrame(Timer);
+	cancelAnimationFrame(GameRAF);
 	console.log("PAUSE!");
 }
 
@@ -446,6 +461,7 @@ var pauseGame = function() {
 // ИГРА ВОЗОБНОВЛЯЕТСЯ
 var playButton = document.getElementsByClassName("play")[0];
 var playGame = function() {
-	Timer = requestAnimationFrame(Game);
+	GameRAF = requestAnimationFrame(Game);
 	console.log("PLAY!");
 }
+

@@ -14,15 +14,18 @@
 		<h1>Stickman Fishing</h1>
 		</div>
 		<!-- TODO: оформить форму и прочесть о кнопках!!! -->
-		<form action="">
+		<form>
 			<input type="button" name="play" value="играть">
 			<input type="button" name="info" value="информация">
 			<input type="button" name="rekords" value="рекорды">
 			<button class = "sound"><img src="images/icon/soundon.svg" alt="soundimg"></button>
 		</form>
-		
-		<script src="js/sound.js"></script>
+		 <audio class = "audio_fon" preload autoplay>
+    	<source src="sounds/fun.ogg" type="audio/ogg; codecs=vorbis">
+    	<source src="sounds/fun.mp3" type="audio/mpeg">
+    	</audio>
 	</div>
-	
+
+	<script src="js/sound.js"></script>
 </body>
 </html>

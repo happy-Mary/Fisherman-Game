@@ -33,6 +33,7 @@ body {
 	height: 100%;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, .5);
+	text-align: center;
 }
 
 .header {
@@ -193,7 +194,7 @@ form {display: block;}
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	display: block;
 }
 
@@ -203,3 +204,14 @@ form {display: block;}
 .hello-message h3 {padding-top: 10%;}
 
 
+table {
+	width: 60%;
+	height: 80vh;
+	margin: 3% auto;
+	border: 3px solid black;
+}
+td  {
+	border: 1px solid black;
+}
+
+.container_main h2 {font-size: 250%;}
