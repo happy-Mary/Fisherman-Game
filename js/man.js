@@ -456,7 +456,6 @@ var pauseGame = function() {
 	console.log("PAUSE!");
 }
 
-
 // ИГРА ВОЗОБНОВЛЯЕТСЯ
 var playButton = document.getElementsByClassName("play")[0];
 var playGame = function() {
@@ -465,8 +464,7 @@ var playGame = function() {
 }
 
 
-
-
+// конец класса игры
 }
 
 
