@@ -1,4 +1,4 @@
-// TODO: Class Game
+function GameClass() {
 
 // REQUEST ANIMATION SUPPORT
 (function() {
@@ -33,10 +33,9 @@ function RandomDiap(N,M)
     return Math.floor(Math.random()*(M-N+1))+N;
 }
 
+
 // типы рыб
 var fishes = ["fish_blue", "fish_gold", "fish_green", "fish_bone"];
-
-
 // получаем элементы со страницы
 var gameSpace =  document.getElementsByClassName("game-field")[0];
 var skySpace = document.getElementsByClassName("sky")[0];
@@ -465,3 +464,11 @@ var playGame = function() {
 	console.log("PLAY!");
 }
 
+
+
+
+}
+
+
+// TODO: Class Game
+var Game = new GameClass;
