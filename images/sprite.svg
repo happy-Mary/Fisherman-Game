@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-	<title>Game page</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script>
-		"use strict"
-	</script>
-</head>
-
-<body>
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- СПРАЙТЫ, ВЫНЕСТИ ВО ВНЕШНИЙ ФАЙЛ, В JS ИЗМЕНИТЬ ПУТИ  -->
-<svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink">
   <symbol id="fish_blue">
    <path stroke="null" fill="#F74B4B" d="M116.152 227.184c0-25.504 19.258-46.178 43.013-46.178h49.386c0 25.504-19.257 46.178-43.012 46.178h-49.386zM258.978 248.104c-11.23-22.474-3.363-50.465 17.57-62.52l43.52-25.064c11.23 22.474 3.362 50.465-17.57 62.52l-43.52 25.064zM292.326 115.977c14.87-29.76 4.454-66.825-23.266-82.79L211.433 0c-14.87 29.76-4.453 66.825 23.266 82.79l57.626 33.187z"/><g stroke="null" fill="#F74B4B"><path d="M73.776 131.92H50.168C22.46 131.92 0 107.81 0 78.065h23.608c27.707 0 50.168 24.113 50.168 53.857z"/><path d="M73.776 131.92H50.168C22.46 131.92 0 156.035 0 185.78h23.608c27.707 0 50.168-24.114 50.168-53.86z"/></g><path stroke="null" fill="#51CAF4" d="M458.54 131.93c-36.15 26.376-75.54 45.228-116.32 56.554a349.72 349.72 0 0 1-93.74 12.807c-73.33 0-146.66-23.112-210.05-69.36 90.63-66.133 201.58-84.984 303.8-56.567 40.78 11.327 80.16 30.19 116.31 56.566z"/><path stroke="null" fill="#85E1F9" d="M458.537 131.93c-63.39 46.25-136.722 69.364-210.053 69.364-73.332 0-146.663-23.113-210.053-69.365h420.107z"/><path stroke="null" fill="#45BDDD" d="M458.54 131.93c-36.15 26.376-75.54 45.228-116.32 56.554-7.28-17.242-11.34-36.394-11.34-56.555 0-20.173 4.06-39.315 11.35-56.567 40.78 11.327 80.16 30.19 116.31 56.566z"/><g stroke="null"><circle fill="#FFF" r="16.016" cy="131.921" cx="370.941"/><circle fill="#4D4D4D" r="9.799" cy="131.921" cx="370.941"/></g>
   </symbol>
@@ -33,70 +16,3 @@
 	<path id="svg_1" d="m101.201,229.816l36.515,0c-5.058,26 -28.037,46.125 -55.341,46.125c-31.107,0 -56.374,-25.521 -56.374,-56.629l0,-103.156c3,-2.903 5,-7.293 5,-12.206l0,-88.122c-0.001,-8.742 -6.759,-15.828 -15.501,-15.828s-15.5,7.086 -15.5,15.828l0,88.122c0,4.913 2,9.303 5,12.206l0,103.156c0,42.221 34.731,76.569 76.952,76.569c41.719,0 76.304,-34.296 76.804,-76.496c0.002,-0.331 0.244,-38.913 0.244,-39.301l0,-31.431l-57.799,81.163z"/>
 	</symbol>
 	</svg>
-<!-- СПРАЙТЫ, ВЫНЕСТИ ВО ВНЕШНИЙ ФАЙЛ, В JS ИЗМЕНИТЬ ПУТИ  -->
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
-	<div class="menu-bar">
-		<!-- тут кнопки управления, таймер, очки игры <-->
-			<span class="time">120</span>
-			<span class="points">0</span>
-		<ul class="menu">
-			<li class="play"></li>
-			<li class="pause"></li>
-			<li class="home"></li>
-		</ul>
-		<div class="hello-message">
-        	<h3>уровень <span>1</span></h3>
-        	<p>Соберите <span class="taskC">1000</span> очков за <span class="taskT">120</span> секунд.</p>
-        	<form action="post">
-        		<input type="button" class = "gobutton" value="играть">
-        	</form>
-        </div>
-	</div>
-
-	<!-- поле игры -->
-	<div class="game-field">
-		<!-- НЕБО -->
-		<div class="sky">
-		<!-- MAN -->
-		<svg  width = "180" viewBox="0 0 180 200"  xmlns = "http://www.w3.org/2000/svg" id = "fisherman">
-			<title>Fisherman</title>
-			<defs>
-			<pattern id="boatbg" width="10" height="10" patternUnits = "userSpaceOnUse" fill="yellow">
-				<polygon points = '0,0 5,0 0,10' fill="yellow"/>
-				<polygon points = '0,10 5,0 10,10' fill="brown"/>
-				<polygon points = '10,10 10,0 5,0' fill="yellow"/>
-			</pattern>
-			</defs>
-			<!-- head -->
-			<circle cx="55" cy="45" r="20" fill="green"/>
-			<circle cx="68" cy="40" r="8" fill="#fff" stroke="#000"/>
-			<circle cx="70" cy="40" r="3" fill="#000"/>
-			<!-- body -->
-			<rect x="30" y="60" width="50" height="110" rx="10" ry="10" fill="green"/>
-			<!-- boat -->
-			<polygon points='0 140, 140 140, 75 200, 20 200' stroke="black" fill=" url(#boatbg)"/>
-			<!-- spinning -->
-			<line x1= "100" y1="90" x2="175" y2="5" stroke-width="8" stroke="black" stroke-linecap = "round" class = "rod"/>
-			<!-- hands -->
-			<line x1="70" y1="90" x2="110" y2="72" stroke-width="20" stroke="green" stroke-linecap="round"/>
-		</svg>
-		</div>
-
-		<!-- МОРЕ -->
-		<div class="sea">
-        </div>
-
-        <!-- волны и дно -->
-        <img src="images/dno1.png" alt="dno" class = "dno">
-        <div class="wave1"></div>
-        <div class="wave2"></div>
-	</div>
-
-	<!-- JS -->
-	<script src="js/sound.js"></script>
-	<script src="js/man.js"></script>
-</body>
-</html>

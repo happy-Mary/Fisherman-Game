@@ -1,3 +1,15 @@
+#main_container {width: 100%; height: 100%;}
+
+#error-m {
+position: absolute;
+height: 10%;
+top: 20vh;
+left: 0;
+font-size: 4em;
+color: red;
+text-align: center;
+z-index: 1000;
+}
 
 
 body, html {
@@ -5,18 +17,20 @@ body, html {
 	height:100%;
 	padding: 0;
 	margin: 0;
-	font-size: 100%;
+	font-size: 96%;
 }
 
 body {
 	background: #fff url('../images/bg1.jpg');
-	font-family: cursive;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
 
 /*MAIN PAGE*/
+
 .container_main {
+       padding: .1em;
 	width: 60vw;
-	height: 100%;
+	height: 100vh;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, .5);
 	text-align: center;
@@ -30,17 +44,17 @@ body {
 	font-size: 300%;
 }
 
-.header h1 {padding: 5%;}
+.header h1 {padding: 5%; text-transform: uppercase;}
 
-form {display: block;}
+.form {display: block;}
 .container_main input {
 	display: block;
 	text-transform: uppercase;
-	font-family: 'Press Start 2P', cursive;
+        font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	width: 80%;
 	height: 15%;
 	margin: 5% auto;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-weight: bold;
 	color: #37DE6A;;
 }
@@ -58,8 +72,6 @@ form {display: block;}
 	height: 100%;
 }
 
-
-/*GAME PAGE*/
 .menu-bar {
 	margin: 0 5vw;
 	height: 10vh;
@@ -193,40 +205,49 @@ form {display: block;}
 
 table {
 	width: 60%;
-	height: 80vh;
-	margin: 3% auto;
-	border: 3px solid black;
+	height: 75vh;
+	margin: 2% auto;
+	border: 2px solid black;
 }
 td  {
 	border: 1px solid black;
+        width: 50%;
 }
 
-.container_main h2 {font-size: 250%; color: green;}
-.container_main h3 {font-size: 200%; color: green;}
+.container_main h2 {font-size: 200%; color: green; margin: .5em;}
+.container_main h3 {font-size: 180%; color: green;  margin: .5em;}
 .container_main p {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	color: green;
-	margin:  2% 10%;
+	margin:  .5em; 10%;
 	text-align: justify;
 }
 .control img {
 	width: 5%;
 }
+.tomain {
+color: green; 
+text-decoration: underline; 
+font-weight: bold;
+cursor: pointer;
+}
 
 
-/*ПОДОГНАТЬ ПОД РАЗМЕРЫ ПЛАНШЕТОВ И МОБИЛ*/
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   html {
     font-size: 80%;
   }
+  .container_main {
+  	width: 100%;
+  	height: 100%;
+  }
+  .game-field {
+       width: 100%;
+}
 }
 
 @media (max-width: 700px) {
   html {
     font-size: 60%;
-  }
-  .container_main {
-  	width: 100%;
-  	height: 100%;
   }
 }
